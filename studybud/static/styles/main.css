@@ -1,3 +1,11 @@
-body{
-    background-color: aquamarine;
+body {
+    background-color: rgb(120,170,220);
+}
+
+p {
+    font-family: Courier;
+}
+
+h1 {
+    font-family: Georgia;
 }

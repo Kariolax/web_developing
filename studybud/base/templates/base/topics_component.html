@@ -7,6 +7,6 @@
 
 {% for topic in topics %}
 <div>
-    <li><a href="{% url 'home' %}?q={{topic.name}}">{{topic.name}}</a></li>
+    <p><li><a href="{% url 'home' %}?q={{topic.name}}">{{topic.name}}</a></li></p>
 </div>
 {% endfor %}

@@ -6,8 +6,10 @@
     {% endif %}
 
     <a href="{% url 'user-profile' room.host.id %}">@{{room.host.username}}</a>
-    <h3> <a href="{% url 'room' room.id %}"> {{room.name}} </a> </h3>
-    <small>{{room.topic.name}}</small>
+    <h3><cite><a href="{% url 'room' room.id %}"> {{room.name}} </a></cite></h3>
+    <small>Released on {{room.created}}</small>
+    <br>
+    <abbr title="Topic's name">{{room.topic.name}}</abbr>
     <hr>
 </div>
 {% endfor %}
