@@ -1,0 +1,40 @@
+{% include 'main.html' %}
+
+{% block content %}
+
+<style>
+    .home {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+</style>
+
+<div class="home">
+
+    <div>
+        {% for entry in entries %}
+        <p>
+            {% if entry.description == 'GitHub' %}
+                <a href="{% url 'github' %}">{{entry.description}}</a>
+            {% elif entry.description == 'LinkedIn' %}
+                <a href="{% url 'linkedin' %}">{{entry.description}}</a>
+            {% else %}
+                {{entry.description}}
+        </p>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    <div>
+        [empty space]
+    </div>
+
+
+</div>
+<body>
+
+
+
+</body>
+
+{% endblock content %}

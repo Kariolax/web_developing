@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% block content %}
 
-</body>
-</html>
+{% for topic in topics %}
+    <a href="{% url 'home' %}?q={{topic.name}}"><p>{{topic.name}}</p></a>
+{% endfor %}
+
+{% endblock content%}
