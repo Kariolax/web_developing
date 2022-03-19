@@ -1,7 +1,38 @@
 {% block content %}
+{% load static %}
 
-{% for topic in topics %}
-    <a href="{% url 'home' %}?q={{topic.name}}"><p>{{topic.name}}</p></a>
-{% endfor %}
+<style>
+    .navbar {
+    font-family: Courier;
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr
+    }
+
+    .image {
+    width: 200px;
+    height: 260px;
+    }
+</style>
+
+<div class="navbar">
+    <div1>
+
+        {% for topic in topics %}
+            <p>
+                &nbsp;
+                <a class="button" id="menu" href="{% url 'home' %}?q={{topic.name}}">{{topic.name}}</a>
+            </p>
+        {% endfor %}
+    </div1>
+
+    <div>
+
+    </div>
+
+    <div2>
+        <img class="image" src="{% static 'images/selfphoto.png' %}"/>
+    </div2>
+
+</div>
 
 {% endblock content%}

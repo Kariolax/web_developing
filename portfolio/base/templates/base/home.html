@@ -1,40 +1,52 @@
 {% include 'main.html' %}
-
+{% load static %}
 {% block content %}
 
 <style>
     .home {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 3fr 1fr;
     }
 </style>
 
+<body>
+
 <div class="home">
 
-    <div>
+    <div3>
+
         {% for entry in entries %}
-        <p>
+
+        {% if forloop.first %}
+            <h3>
+                {{entry.topic}}
+            </h3>
+        {% endif %}
+        <ol>
+        <p1>
             {% if entry.description == 'GitHub' %}
-                <a href="{% url 'github' %}">{{entry.description}}</a>
+                <a class="button" href="{% url 'github' %}">{{entry.description}}</a>
             {% elif entry.description == 'LinkedIn' %}
-                <a href="{% url 'linkedin' %}">{{entry.description}}</a>
+                <a class="button" href="{% url 'linkedin' %}">{{entry.description}}</a>
             {% else %}
-                {{entry.description}}
-        </p>
+                {{entry.description|linebreaks}}
+        </p1>
             {% endif %}
+        </ol>
         {% endfor %}
-    </div>
+    </div3>
 
     <div>
-        [empty space]
+
     </div>
 
 
 </div>
-<body>
+
 
 
 
 </body>
+
 
 {% endblock content %}

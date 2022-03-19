@@ -1,0 +1,60 @@
+@keyframes
+button_color {
+  from {background-color: #599999}
+  to {background-color: #232222}
+}
+
+body {
+    width: 900px;
+    font-family: Arial;
+    background-image: url("/static/images/bg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+p {
+    width: 680px;
+    float: both;
+    background-color: 599999;
+}
+
+div1 {
+    margin: 10px;
+    border-radius: 8px;
+    background-image: url("/static/images/background-menu.png")
+}
+
+div2 {
+    margin: 15px;
+}
+
+div3 {
+    margin-left: 15px;
+}
+
+a.button {
+    background:    #599999;
+    border-radius: 20px;
+    padding:       10px 10px;
+    color:         #ffffff;
+    display:       inline-block;
+    font:          normal bold 14px/1 "Open Sans", sans-serif;
+    text-align:    center;
+}
+
+a.button:hover {
+    transform: translateY(1px);
+    animation-name: button_color;
+    animation-duration: 0.5s;
+    background-color: #232222;
+}
+
+a.button:active {
+  background-color: #232222;
+  box-shadow: 0 2px #366;
+  transform: translateY(3px);
+}
+
+a#menu {
+    text-decoration: none;
+}
