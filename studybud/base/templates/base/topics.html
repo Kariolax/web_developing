@@ -30,7 +30,7 @@
                 <input name="q" placeholder="Search for topics" />
               </label>
             </form>
-
+            {% if topics.count != 0 %}
             <ul class="topics__list">
               <li>
                 <a href="{% url 'topics' %}" class="active">All <span>{{topics.count}}</span></a>
@@ -41,6 +41,10 @@
               </li>
               {% endfor %}
             </ul>
+            {% else %}
+<!--              <img class="topics__fail" src="/images/icons/loupe.png"/>-->
+              <h3 class="topics__header">Yikes! Couldn't find that one!</h3>
+            {% endif %}
           </div>
         </div>
       </div>

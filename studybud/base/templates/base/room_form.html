@@ -14,7 +14,7 @@
                 </path>
               </svg>
             </a>
-            <h3>Create/Update Study Room</h3>
+            <h3>Create/Update Post</h3>
           </div>
         </div>
         <div class="layout__body">
@@ -23,7 +23,16 @@
 
             <div class="form__group">
               <label for="room_topic">Topic</label>
+              {% if user.is_superuser %}
               <input required type="text" value="{{room.topic}}" name="topic" list="topic-list" />
+              {% else %}
+              <select id="room-topic" name="topic" list="topic-list" />
+              <datalist id="topic-list" />
+                {% for topic in topics %}
+                  <option value="{{topic}}">{{topic}}</option>
+                {% endfor %}
+              </select>
+              {% endif %}
               <datalist id="topic-list" />
               <select id="room-topic">
                 {% for topic in topics %}
@@ -33,12 +42,12 @@
             </div>
 
             <div class="form__group">
-              <label for="room_name">Room Name</label>
+              <label for="room_name">Post Name</label>
               {{form.name}}
             </div>
 
             <div class="form__group">
-              <label for="room_description">Room Description</label>
+              <label for="room_description">Description</label>
               {{form.description}}
             </div>
 
